@@ -1,6 +1,6 @@
 ### How to run
 
-• `pip install pip install fastapi uvicorn pandas`
+• `pip install fastapi uvicorn pandas`
 
 • `uvicorn app.main:app --reload`
 
