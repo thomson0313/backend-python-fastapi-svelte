@@ -1,8 +1,21 @@
 import pandas as pd
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI()
+
+# Get the frontend URL from the environment variable
+frontend_url = os.getenv("FRONTEND_URL")
+
+# Configure CORS middleware
+origins = [
+    frontend_url,  # Use the frontend URL from the .env file
+]
 
 # Allow all origins for now (use specific origins in production)
 app.add_middleware(
